@@ -1,13 +1,9 @@
 package com.khalak.model;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "roles")

@@ -4,7 +4,6 @@ import com.khalak.exception.NullEntityReferenceException;
 import com.khalak.model.State;
 import com.khalak.repository.StateRepository;
 import com.khalak.service.StateService;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
