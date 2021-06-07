@@ -1,9 +1,9 @@
 package com.khalak.service.impl;
 
-import com.softserve.itacademy.exception.NullEntityReferenceException;
-import com.softserve.itacademy.model.User;
-import com.softserve.itacademy.repository.UserRepository;
-import com.softserve.itacademy.service.UserService;
+import com.khalak.exception.NullEntityReferenceException;
+import com.khalak.model.User;
+import com.khalak.repository.UserRepository;
+import com.khalak.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;

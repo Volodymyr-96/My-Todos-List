@@ -1,24 +1,17 @@
 package com.khalak.controllers;
 
+import com.khalak.dto.TaskDto;
+import com.khalak.dto.TaskTransformer;
+import com.khalak.model.Priority;
+import com.khalak.model.Task;
+import com.khalak.service.StateService;
+import com.khalak.service.TaskService;
+import com.khalak.service.ToDoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-public class TaskController {
-}import com.softserve.itacademy.dto.TaskDto;
-        import com.softserve.itacademy.dto.TaskTransformer;
-        import com.softserve.itacademy.model.Priority;
-        import com.softserve.itacademy.model.Task;
-        import com.softserve.itacademy.service.StateService;
-        import com.softserve.itacademy.service.TaskService;
-        import com.softserve.itacademy.service.ToDoService;
-        import org.springframework.stereotype.Controller;
-        import org.springframework.ui.Model;
-        import org.springframework.validation.BindingResult;
-        import org.springframework.validation.annotation.Validated;
-        import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/tasks")

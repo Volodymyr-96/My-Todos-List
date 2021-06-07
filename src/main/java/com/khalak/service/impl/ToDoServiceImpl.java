@@ -1,9 +1,9 @@
 package com.khalak.service.impl;
 
-import com.softserve.itacademy.exception.NullEntityReferenceException;
-import com.softserve.itacademy.model.ToDo;
-import com.softserve.itacademy.repository.ToDoRepository;
-import com.softserve.itacademy.service.ToDoService;
+import com.khalak.exception.NullEntityReferenceException;
+import com.khalak.model.ToDo;
+import com.khalak.repository.ToDoRepository;
+import com.khalak.service.ToDoService;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;

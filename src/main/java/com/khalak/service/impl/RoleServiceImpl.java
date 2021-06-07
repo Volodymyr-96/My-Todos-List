@@ -1,6 +1,8 @@
 package com.khalak.service.impl;
 
+import com.khalak.exception.NullEntityReferenceException;
 import com.khalak.model.Role;
+import com.khalak.repository.RoleRepository;
 import com.khalak.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,10 +1,9 @@
 package com.khalak.service.impl;
 
-import com.softserve.itacademy.exception.NullEntityReferenceException;
-import com.softserve.itacademy.model.Role;
-import com.softserve.itacademy.model.State;
-import com.softserve.itacademy.repository.StateRepository;
-import com.softserve.itacademy.service.StateService;
+import com.khalak.exception.NullEntityReferenceException;
+import com.khalak.model.State;
+import com.khalak.repository.StateRepository;
+import com.khalak.service.StateService;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
