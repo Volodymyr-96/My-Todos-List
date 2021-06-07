@@ -1,6 +1,6 @@
 package com.khalak.controllers;
 
-import com.softserve.itacademy.service.UserService;
+import com.khalak.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

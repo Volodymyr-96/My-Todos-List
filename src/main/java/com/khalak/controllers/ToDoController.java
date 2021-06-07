@@ -1,11 +1,12 @@
 package com.khalak.controllers;
 
-import com.softserve.itacademy.model.Task;
-import com.softserve.itacademy.model.ToDo;
-import com.softserve.itacademy.model.User;
-import com.softserve.itacademy.service.TaskService;
-import com.softserve.itacademy.service.ToDoService;
-import com.softserve.itacademy.service.UserService;
+
+import com.khalak.model.Task;
+import com.khalak.model.ToDo;
+import com.khalak.model.User;
+import com.khalak.service.TaskService;
+import com.khalak.service.ToDoService;
+import com.khalak.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

@@ -1,8 +1,8 @@
 package com.khalak.controllers;
 
-import com.softserve.itacademy.model.User;
-import com.softserve.itacademy.service.RoleService;
-import com.softserve.itacademy.service.UserService;
+import com.khalak.model.User;
+import com.khalak.service.RoleService;
+import com.khalak.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
