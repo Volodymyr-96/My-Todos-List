@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Pattern;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")

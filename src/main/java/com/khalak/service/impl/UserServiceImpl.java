@@ -4,6 +4,9 @@ import com.khalak.exception.NullEntityReferenceException;
 import com.khalak.model.User;
 import com.khalak.repository.UserRepository;
 import com.khalak.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -14,15 +17,20 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
+        this.passwordEncoder = new BCryptPasswordEncoder();
     }
 
     @Override
-    public User create(User role) {
-        if (role != null) {
-            return userRepository.save(role);
+    public User create(User user) {
+        String encodedPassword = this.passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+
+        if (user != null) {
+            return userRepository.save(user);
         }
         throw new NullEntityReferenceException("User cannot be 'null'");
     }
