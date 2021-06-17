@@ -22,11 +22,14 @@ public class My_UserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<String> roles = new HashSet<>();
-        roles.add("ADMIN");
-        roles.add("USER");
+        if(user.getRole().getName().equals("ADMIN")){
+            roles.add(user.getRole().getName());
+        } else if (user.getRole().getName().equals("USER"))
+            roles.add("USER");
+
         return roles.stream()
-                        .map(role -> new SimpleGrantedAuthority(role))
-                        .collect(Collectors.toList());
+                .map(role -> new SimpleGrantedAuthority(role))
+                .collect(Collectors.toList());
     }
 
     @Override

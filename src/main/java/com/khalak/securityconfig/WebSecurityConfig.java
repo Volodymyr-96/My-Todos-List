@@ -1,5 +1,6 @@
 package com.khalak.securityconfig;
 
+import com.khalak.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,7 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/users/create").permitAll()
+                .antMatchers("/users/create").permitAll()
+//                .antMatchers("/", "/home").hasAuthority("ADMIN")
+//                .antMatchers("/todos/**").access("hasAnyRole('USER', 'ADMIN')")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -46,5 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+
 }
 
