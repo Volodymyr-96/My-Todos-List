@@ -28,7 +28,6 @@
                     <a th:href="@{|/todos/all/users/${user.id}|}" th:text="${user.firstName + ' ' + user.lastName}" />
                 </td>
                 <td th:text="${user.email}"/>
-
                 <td>
                     <a th:href="@{|/users/${user.id}/update|}">Edit</a>
                 </td>

@@ -9,14 +9,11 @@
 <div th:replace="header"></div>
 <div class="col-md-offset-2 col-sm-8">
     <h2 th:text="${'All Tasks From ' + todo.title}"></h2>
-
     <form class="form-horizontal" th:action="@{|/tasks/create/todos/${todo.id}|}" method="get">
         <div align="right">
             <input class="btn-info btn-lg" type="submit" value="Create Task">
         </div>
     </form>
-
-
     <br>
     <h3>Tasks:</h3>
     <table class="table">
@@ -59,15 +56,13 @@
         <tr th:each="collaborator, iStat: ${todo.collaborators}">
             <td th:text="${iStat.index + 1}"/>
             <td>
-                <a th:href="@{|/todos/all/users/${collaborator.id}|}"
-                   th:text="${collaborator.firstName + ' ' + collaborator.lastName}"/>
+                <a th:text="${collaborator.firstName + ' ' + collaborator.lastName}"/>
             </td>
             <td>
                 <a th:href="@{/todos/{id}/remove(id = ${todo.id}, user_id = ${collaborator.id})}">Remove</a>
             </td>
         </tr>
     </table>
-
     <span>
         <a th:href="@{|/todos/all/users/${todo.owner.id}|}">Go to ToDo Lists</a>
     </span>
