@@ -1,6 +1,5 @@
 package com.khalak.service;
 
-
 import com.khalak.model.State;
 import com.khalak.model.Task;
 import com.khalak.repository.StateRepository;

@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
@@ -27,7 +26,6 @@ public class TaskServiceTest {
 
         Assertions.assertEquals(task, taskService.create(task));
         Assertions.assertEquals(beforeCreate, taskService.getAll().size());
-
     }
 
     @Test

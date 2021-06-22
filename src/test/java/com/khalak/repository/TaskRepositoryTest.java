@@ -93,6 +93,4 @@ public class TaskRepositoryTest {
 
         Assertions.assertEquals(expected, taskRepository.getByTodoId(todo.getId()));
     }
-
-
 }

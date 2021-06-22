@@ -117,7 +117,6 @@ public class ToDoServiceTest {
         List<ToDo> actual = toDoService.getAll();
         Assertions.assertEquals(expected.size(), actual.size());
         verify(toDoRepository).findAll();
-
     }
 
     @Test

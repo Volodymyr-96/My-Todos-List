@@ -24,9 +24,6 @@ public class ToDoRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private TestEntityManager testEntityManager;
-
     @Test
     public void shouldCreateNewToDo() {
         ToDo testToDo = new ToDo();

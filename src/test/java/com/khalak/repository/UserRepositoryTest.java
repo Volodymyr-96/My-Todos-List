@@ -19,9 +19,6 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private TestEntityManager testEntityManager;
-
     @Test
     @Transactional
     public void createUserTest(){

@@ -17,9 +17,6 @@ public class StateRepositoryTest {
     @Autowired
     StateRepository stateRepository;
 
-    @Autowired
-    private TestEntityManager manager;
-
     @Test
     void returnStateByName() {
         String name = "testing";

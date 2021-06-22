@@ -62,7 +62,6 @@ public class UserServiceTest {
 
         when(userRepository.findById(6L)).thenReturn(Optional.of(user1));
         when(userRepository.findById(8L)).thenReturn(Optional.ofNullable(null));
-
     }
 
     @Test
