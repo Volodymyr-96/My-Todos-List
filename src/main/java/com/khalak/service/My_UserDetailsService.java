@@ -18,18 +18,12 @@ public class My_UserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
         My_UserDetails userDetails;
-        if(user != null){
+        if (user != null) {
             userDetails = new My_UserDetails();
             userDetails.setUser(user);
-        }else{
+        } else {
             throw new UsernameNotFoundException("User not exist!");
         }
-//        User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not present"));
         return userDetails;
     }
-
-    public void createUser(UserDetails user){
-        userRepository.save((User) user);
-    }
-
 }

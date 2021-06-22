@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Pattern;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -28,19 +27,14 @@ public class User  {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    //    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}",
-//            message = "Must be minimum 6 characters, at least one letter and one number")
+    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}",
+            message = "Must be minimum 6 characters, at least one letter and one number")
     @Column(name = "password", nullable = false)
     private String password;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
-    
-//    @ManyToMany
-//    @JoinTable(name = "roles", joinColumns = @JoinColumn(name = "id"),
-//                                inverseJoinColumns = @JoinColumn(name = "role_id"))
-//    private Set<Role> roles;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<ToDo> myTodos;
@@ -102,36 +96,8 @@ public class User  {
         this.role = role;
     }
 
-//    public Set<Role> getRoles() {
-//        return roles;
-//    }
-
-//    public void setRoles(Set<Role> roles) {
-//        this.roles = roles;
-//    }
-
-    public List<ToDo> getMyTodos() {
-        return myTodos;
-    }
-
-    public void setMyTodos(List<ToDo> myTodos) {
-        this.myTodos = myTodos;
-    }
-
-    public List<ToDo> getOtherTodos() {
-        return otherTodos;
-    }
-
-    public void setOtherTodos(List<ToDo> todos) {
-        this.otherTodos = todos;
-    }
-
     public String getUsername() {
         return email;
-    }
-
-    public boolean getActive(){
-        return true;
     }
 
     @Override
@@ -142,7 +108,6 @@ public class User  {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-//                ", role=" + role +
                 '}';
     }
 

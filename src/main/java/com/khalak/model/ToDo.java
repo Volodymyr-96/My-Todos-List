@@ -1,6 +1,6 @@
 package com.khalak.model;
 
-import org.hibernate.validator.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

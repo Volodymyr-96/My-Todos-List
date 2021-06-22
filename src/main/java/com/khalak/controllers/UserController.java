@@ -3,7 +3,6 @@ package com.khalak.controllers;
 import com.khalak.model.User;
 import com.khalak.service.RoleService;
 import com.khalak.service.UserService;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -54,7 +53,6 @@ public class UserController {
         return "update-user";
     }
 
-
     @PostMapping("/{id}/update")
     public String update(@PathVariable long id, Model model, @Validated @ModelAttribute("user") User user, @RequestParam("roleId") long roleId, BindingResult result) {
         User oldUser = userService.readById(id);
@@ -71,7 +69,6 @@ public class UserController {
         userService.update(user);
         return "redirect:/users/" + id + "/read";
     }
-
 
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable("id") long id) {

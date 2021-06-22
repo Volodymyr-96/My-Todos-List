@@ -1,6 +1,5 @@
 package com.khalak.service;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.khalak.model.User;
 import lombok.Getter;
 import lombok.Setter;

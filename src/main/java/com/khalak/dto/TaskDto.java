@@ -57,15 +57,7 @@ public class TaskDto {
         return todoId;
     }
 
-    public void setTodoId(long todoId) {
-        this.todoId = todoId;
-    }
-
     public long getStateId() {
         return stateId;
-    }
-
-    public void setStateId(long stateId) {
-        this.stateId = stateId;
     }
 }
