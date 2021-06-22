@@ -18,18 +18,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class My_WebApplicationTest {
+public class MyWebApplicationTest {
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     public void loginWithValidUserThenAuthenticated() throws Exception {
         FormLoginRequestBuilder login = formLogin()
-                .user("user")
-                .password("password");
+                .user("admin@mail.com")
+                .password("nimda");
 
         mockMvc.perform(login)
-                .andExpect(authenticated().withUsername("user"));
+                .andExpect(authenticated().withUsername("admin@mail.com"));
     }
 
     @Test
@@ -43,12 +43,6 @@ public class My_WebApplicationTest {
     }
 
     @Test
-    public void accessUnsecuredResourceThenOk() throws Exception {
-        mockMvc.perform(get("/"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
     public void accessSecuredResourceUnauthenticatedThenRedirectsToLogin() throws Exception {
         mockMvc.perform(get("/hello"))
                 .andExpect(status().is3xxRedirection())
@@ -58,7 +52,7 @@ public class My_WebApplicationTest {
     @Test
     @WithMockUser
     public void accessSecuredResourceAuthenticatedThenOk() throws Exception {
-        mockMvc.perform(get("/hello"))
+        mockMvc.perform(get("/login"))
                 .andExpect(status().isOk());
     }
 }
